@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bakery</title>
+        <!--Estilos propios-->
+        <link rel="stylesheet" href="assets/styles/normalize.css" />
+        <link rel="stylesheet" href="assets/styles/main.css" />
+        <!--Estilos externos-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Lato:wght@300;400;700&family=Quicksand:wght@300;500;700&family=Roboto:wght@300;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!--Estilo para el efecto carrusel en las imagenes .-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+        />
+    </head>
+    <body>
+        <nav>
+            <div class="nav_brand">
+                <a href="#">
+                    <img src="/assets/img/logo.png" alt="Mom & Pop´s logo" />
+                    <p id="nav_brand__brand">Mom & Pop´s <span>Bakery</span></p>
+                </a>
+            </div>
+
+            <div class="nav_navigation">
+                <ul>
+                    <a href=""><li class="navigation_item">Cakes</li></a>
+                    <a href=""><li class="navigation_item">Pricing</li></a>
+                    <a href=""><li class="navigation_item">Order</li></a>
+                    <a href=""><li class="navigation_item">Contact Us</li></a>
+                </ul>
+            </div>
+
+            <i class="fas fa-bars" id="wrap-menu"></i>
+        </nav>
+
+        <!--El main es el contenido "exclusivio de la página /home"-->
+        <main>
+            <article class="offer">
+                <!--Se suele usar section cuando la "sección" se puede identificar por un h2 (título/subtítulo)-->
+                <section class="offer_content">
+                    <h2>Fantastic offer</h2>
+                    <p class="focus_paragraph">
+                        We have a special treat to our new customers. Order now
+                        and get a big discount on your firts cake!
+                    </p>
+                    <a href=""
+                        ><button class="primary_button">Get discount</button></a
+                    >
+                </section>
+            </article>
+
+            <section class="container welcome">
+                <h2 class="subtitle">Welcome to Mom & Pop´s Bakery</h2>
+                <p class="focus_paragraph">
+                    Mom & Pop´s Bakery was founded in Paris in 1993 with the
+                    mission of giving great cake to the world. Our dedication
+                    and tasty cakes have won us numerous awards. Lorem ipsum
+                    dolor sit amset, consectetur adpiscing alit. Aenead id porus
+                    ipsum
+                </p>
+            </section>
+
+            <section class="why-section">
+                <h2 class="subtitle">Why Choose Us</h2>
+
+                <div class="why-section__cards-container">
+                    <!--Cada card contiene un icono, el título y un párrafo descriptivo-->
+                    <article class="why-section__card">
+                        <i class="fas fa-birthday-cake"></i>
+                        <h3>Great Taste</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. In tempus malesuada ex, a semper urna tempus
+                            ut. Fusce consectetur vehicula scelerisque.
+                            Phasellus finibus ac lectus vel efficitur. Integer
+                            eget tincidunt.
+                        </p>
+                    </article>
+
+                    <article class="why-section__card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Great Taste</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. In tempus malesuada ex, a semper urna tempus
+                            ut. Fusce consectetur vehicula scelerisque.
+                            Phasellus finibus ac lectus vel efficitur. Integer
+                            eget tincidunt.
+                        </p>
+                    </article>
+
+                    <article class="why-section__card">
+                        <i class="fas fa-shopping-basket"></i>
+                        <h3>Great Taste</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. In tempus malesuada ex, a semper urna tempus
+                            ut. Fusce consectetur vehicula scelerisque.
+                            Phasellus finibus ac lectus vel efficitur. Integer
+                            eget tincidunt.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="container gallery">
+                <h2 class="subtitle">Gallery</h2>
+
+                <div class="gallery__cards-container">
+
+                    <article class="gallery__card">
+                        <a
+                            href="./assets/img/desert-1.jpg"
+                            target="_blank"
+                            data-lightbox="cakes"
+                            ><img
+                                src="./assets/img/desert-1.jpg"
+                                alt="offered product image"
+                            />
+                        </a>
+                    </article>
+
+                    <article class="gallery__card">
+                        <a
+                            href="./assets/img/desert-2.jpg"
+                            target="_blank"
+                            data-lightbox="cakes"
+                            ><img
+                                src="./assets/img/desert-2.jpg"
+                                alt="cake image"
+                        /></a>
+                    </article>
+
+                    <article class="gallery__card">
+                        <a
+                            href="./assets/img/desert-3.jpg"
+                            target="_blank"
+                            data-lightbox="cakes"
+                            ><img
+                                src="./assets/img/desert-3.jpg"
+                                alt="offered product image"
+                            />
+                        </a>
+                    </article>
+
+                </div>
+
+            </section>
+
+            <footer>
+                <div class="contacts">
+                    <div class="contacts__item adress">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>21 Revolution Street Paris, France</p>
+                    </div>
+                    <div class="contacts__item phone">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 555 123456</p>
+                    </div>
+                    <div class="contacts__item  mail">
+                        <i class="fas fa-envelope-open"></i>
+                        <p>support@mom&pop.com</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+
+    <!--Fontawesome script (for icons)-->
+    <script
+        src="https://kit.fontawesome.com/5023e2a492.js"
+        crossorigin="anonymous"
+    ></script>
+    <!--Script para el efecto carrusel de las imágenes-->
+    <!--No funciona :( -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.map"></script>
+</html>

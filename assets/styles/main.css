@@ -1,0 +1,305 @@
+:root {
+    --soft_pink: #f8b7ce;
+    --soft_grey: #bfc4d0;
+    --very_soft_grey: #f1f1f1;
+    --very_dary_grey: #292c2f;
+    --grey_text: #5a5a5a;
+
+    --fz_sm: 1.4rem;
+    --fz_md: 1.6rem;
+    --fz_lg: 1.8rem;
+    --fz_giant: 4.8rem;
+}
+
+html {
+    font-family: 'Kumbh Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*##################*/
+/* Clases generales */
+/*##################*/
+
+.container {
+    margin: 0px auto; /*Los contenedores están centrados*/
+    width: 75%; /*Los contenedores ocupan el 75% del ancho disponible*/
+    max-width: 1200px; /*Los contenedores no podrán tener más de 1200px de ancho (para pantallas muy grandes)*/
+}
+
+.subtitle {
+    font-size: var(--fz_giant);
+    font-weight: 300;
+    margin: 0px;
+    color: var(--grey_text);
+    margin-bottom: 16px;
+}
+
+.focus_paragraph {
+    /*Parrafos más grandes de lo normal*/
+    columns: var(--grey_text);
+    font-weight: 300;
+    font-size: var(--fz_md);
+}
+
+.primary_button {
+    background-color: var(--soft_pink);
+    border: 2px transparent; /*Borde de 2x px transparente (Para el fecto hover)*/
+    border-radius: 12px; /*Se redondea el radio para mejor apariencia*/
+    color: white;
+    padding: 0.8em 1.2em; /*Separación interna*/
+    font-size: var(--fz_md);
+}
+
+p {
+    font-size: var(--fz_sm);
+    color: var(--grey_text);
+    font-weight: 300;
+}
+
+/* #############################*/
+/*Estilos generales de la navbar*/
+/* #############################*/
+
+nav {
+    display: flex; /*La paerte izquierda se posiciona al lado de la parte derecha*/
+    justify-content: space-around; /*La parte izquierda está al inicio del contenedor y la derecha al final*/
+    align-items: center; /*Centrado vertical de los elementos*/
+
+    height: 6rem; /*Ttiene un alto fijo de 6rem (60px porque en el normalize.css se asignó el font-size como 62.5%)*/
+}
+
+/* #############################*/
+/*Parte izquierda de la navbar (Logo y nombre de la empresa)*/
+.nav_brand a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    /*Tanto el logo como el nombre se encuentran detro de un "a", entonces, a esa etiqueta "a" se le pone un display:flex
+    para que el logo y el nombre se pongan uno al lado del otro*/
+    display: flex;
+    align-items: center; /*Centrado vertical del texto*/
+    gap: 16px; /*Espaciado entre el logo y el nombre*/
+}
+
+#nav_brand__brand {
+    text-transform: uppercase; /*El nombre de la empresa se pone en mayúscula*/
+    letter-spacing: 1px;
+    font-size: var(
+        --fz_lg
+    ); /*El tamaño de la fuente será la variable --fz_lg que corresponde a 1.2rem -> 12px*/
+}
+
+#nav_brand__brand span {
+    font-weight: 300;
+}
+
+.nav_brand img {
+    max-height: 4rem; /*La altura del logo se ajusta a 40px*/
+}
+
+/* #############################*/
+/*Parte derecha de la navbar*/
+.nav_navigation ul {
+    /*Las opciones de navegación se ponen una al lado de la otra*/
+    display: flex;
+}
+
+.nav_navigation li {
+    width: max-content;
+
+    list-style: none; /*Se quitan los puntos que por defecto trae la lista*/
+    margin-left: 1.6rem; /*Margen izquierdo para que los elementos se separen uno del otro*/
+    font-size: var(--fz_md);
+    font-weight: 300;
+    padding: 0.6em 0.8em; /*Padding interno para dar la apariencia de botón*/
+
+    /*Dar apariencia de botón a los elementos de la lista*/
+    border: 2px solid var(--soft_pink);
+    color: var(--soft_pink);
+    border-radius: 1.2rem;
+
+    transition: all 0.2s ease; /*Transición para el efecto :hover*/
+}
+
+.nav_navigation a {
+    text-decoration: none; /*Se quita el subrayado por defecto de los enlaces de la navegación*/
+    color: var(--soft_grey); /*El color del texto será rosa*/
+}
+
+/*Efecto cuando se pase el mouse por encima de los elementos del navbar*/
+.nav_navigation li:hover {
+    background-color: var(--soft_pink);
+    color: white;
+}
+
+/*Icono del menú*/
+#wrap-menu {
+    border: 1px solid #ffdeea; /*El color del borde del ícono será un rosa más claro al que está definido como variable*/
+    padding: 0.4em 0.8em;
+    border-radius: 8px; /*Se redondea el borde externo*/
+    color: var(--soft_pink); /*El color del icono será rosa*/
+    font-size: 2.5rem; /*Se hace más grande porque por defecot es pequeño*/
+    display: none; /*Display none para que no se vea (esto se cambia con un mediaquery)*/
+}
+
+/* #############################*/
+/*Estilos de la ofertar*/
+/* #############################*/
+.offer {
+    height: 38rem; /*Tendrá un alto fijo de 380px*/
+    background: url(../img/background.jpg); /*El fondo será una imágen*/
+    background-repeat: no-repeat; /*SI la imágen es más pequeña que el contenedor, con esta propiedad se evita que se repita y se cree un mosaico*/
+    background-size: cover; /*La imágen se ajusta para no perder calidad*/
+
+    /*Para centrar el otro div*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.offer_content {
+    background-color: white;
+    border-radius: 24px;
+    width: 60%; /*Ocupa el 50% de su contenedor padre*/
+    max-width: 800px;
+    padding: 4rem;
+}
+
+.offer_content h2 {
+    margin: 0px;
+    font-size: 4.8rem;
+    color: var(--grey_text);
+    font-weight: 500;
+}
+
+/* #############################*/
+/*Estilos de la sección Welcome*/
+/* #############################*/
+.welcome {
+    margin: 36px auto; /*16 px arriba-abajo auto a los lados para que se ecntre*/
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.welcome p {
+    margin: 0px auto;
+    width: 60%;
+}
+
+/* #############################*/
+/*Estilos de la sección Why choose us*/
+/* #############################*/
+.why-section {
+    padding: 40px;
+    background-color: var(--very_soft_grey);
+    text-align: center;
+}
+
+.why-section__cards-container {
+    display: flex; /*Para que las cards se pongan una al lado de la otra*/
+    justify-content: center; /*Centrado horizontal*/
+    align-items: center; /*Centrado vertical*/
+    gap: 16px; /*Separación entre los elementos*/
+
+    flex-wrap: wrap; /*Cuando no hay espacio disponible, se ajustan automáticamente (Pasa una debajo de la otra)*/
+}
+
+.why-section__card {
+    width: 30rem; /*Cada card tiene un ancho definido de 300px*/
+}
+
+/*Estilos de los iconos de la card*/
+.why-section__card i {
+    font-size: 4rem;
+    color: var(--soft_pink);
+}
+
+/*Título de la card*/
+.why-section__card h3 {
+    font-size: 4rem;
+    color: var(--grey_text);
+    font-weight: 300;
+    margin: 0px; /*Se eliminan los márgenes por defecto*/
+}
+
+/* #############################*/
+/*Estilos de la galería de imágenes*/
+/* #############################*/
+.gallery {
+    margin: 24px auto;
+    text-align: center;
+}
+
+.gallery__cards-container {
+    display: flex; /*Para posicionar las imágenes una al lado de la otra*/
+    gap: 16px; /*Espaciado entre las imágenes*/
+    flex-wrap: wrap; /*Opción para que en dispositivos pequeños se auto-ajuste y se ponga una imágen debajo de la otra*/
+
+    justify-content: center; /*Centrado horizontal de las cards/imágenes*/
+}
+
+.gallery__card {
+    width: 30rem;
+}
+
+.gallery__card img {
+    width: 100%; /*El ancho de la imágen será el 100% de su contenedor padre (la card), o sea, 30rem -> 300px*/
+}
+
+/* #############################*/
+/*Estilos del footer*/
+/* #############################*/
+footer {
+    background-color: var(--soft_pink);
+    padding: 36px;
+
+    color: white;
+
+    display: flex; /*Para centrar el contenido*/
+    justify-content: center;
+}
+
+footer p {
+    margin: 0px;
+}
+
+.contacts{ /*Contenedor de cada uno de los métodos de contactos -*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.contacts__item {
+    display: flex; /*El icono se posiciona al lado se su texto*/
+    align-items: center;
+    gap: 16px;
+}
+
+.contacts__item i {
+    font-size: var(--fz_md);
+    text-align: center;
+    min-width: 20px; 
+    border-radius: 50%;
+    padding: 6px;
+    background-color: white;
+    color: black;
+}
+
+/*Media query para tamaños menores a 745px*/
+@media (max-width: 745px) {
+    .nav_navigation {
+        /*Se oculta la barra de navegación*/
+        display: none;
+    }
+
+    #wrap-menu {
+        /*Se activa el ícono del menú*/
+        display: inline-block;
+    }
+}
