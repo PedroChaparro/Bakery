@@ -58,6 +58,11 @@ p {
     font-weight: 300;
 }
 
+.fixed_body {
+    /*Modificador para evitar el scroll en el body cuando se abra el menú mobile*/
+    position: fixed;
+}
+
 /* #############################*/
 /*Estilos generales de la navbar*/
 /* #############################*/
@@ -102,7 +107,7 @@ nav {
 
 /* #############################*/
 /*Parte derecha de la navbar*/
-.nav_navigation ul {
+.nav_navigation {
     /*Las opciones de navegación se ponen una al lado de la otra*/
     display: flex;
 }
@@ -268,7 +273,8 @@ footer p {
     margin: 0px;
 }
 
-.contacts{ /*Contenedor de cada uno de los métodos de contactos -*/
+.contacts {
+    /*Contenedor de cada uno de los métodos de contactos -*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -284,7 +290,7 @@ footer p {
 .contacts__item i {
     font-size: var(--fz_md);
     text-align: center;
-    min-width: 20px; 
+    min-width: 20px;
     border-radius: 50%;
     padding: 6px;
     background-color: white;
@@ -294,8 +300,45 @@ footer p {
 /*Media query para tamaños menores a 745px*/
 @media (max-width: 745px) {
     .nav_navigation {
-        /*Se oculta la barra de navegación*/
-        display: none;
+        flex-direction: column; /*Ahora los enlaces se muestran uno debajo del otro*/
+        position: fixed; /*La posición es fija y no depende del contenedo padre (la nav)*/
+        width: 100%; /*Ocupará el 80% del ancho*/
+        height: calc(
+            100vh - 6rem
+        ); /*La altura será el 100% menos lo que ocupa el nav*/
+        margin: 0px;
+        padding: 0px;
+        background-color: white;
+        overflow-y: auto; /*En caso de que hubieran más elementos, se permitiría el scroll*/
+
+        top: 6rem; /*Se posoiciona a 60px del borde superior de la página*/
+        left: 100%; /*Se manda todo a la izquierda (Para esconderlo)*/
+
+        align-items: center;
+
+        transition: left 0.4s ease;
+    }
+
+    .nav_navigation_visible {
+        /*Cuando se agregue la clase desde JS, se corre hacia la izquierda*/
+        left: 0;
+    }
+
+    .nav_navigation li {
+        border: transparent;
+        margin: 0px auto; /*Se cemtran horizontalmente*/
+        line-height: 6rem;
+    }
+
+    .nav_navigation a {
+        /*Todos los elementos tienen borde inferior (para mostrar una separación)*/
+        width: 100%;
+        border-bottom: 1px solid var(--soft_pink);
+    }
+
+    .nav_navigation a:first-child {
+        /*Solo el primero elemento de la lista tiene borde superior*/
+        border-top: 1px solid var(--soft_pink);
     }
 
     #wrap-menu {
